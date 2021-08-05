@@ -105,22 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        }
-
-        if (onBackPressedTime + 2000 > System.currentTimeMillis()) {
-            backToast.cancel();
-            System.exit(0);
-            finish();
-            return;
-        } else {
-            Log.d("FRAGMENT STACK ", String.valueOf(getSupportFragmentManager().getBackStackEntryCount()));
-            getSupportFragmentManager().popBackStack();
-            initUI();
-            backToast = Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT);
-            backToast.show();
-        }
-        onBackPressedTime = System.currentTimeMillis();
+        getSupportFragmentManager().popBackStack();
+        initUI();
     }
 }

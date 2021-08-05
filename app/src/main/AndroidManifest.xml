@@ -8,14 +8,12 @@
 
     <application
         android:allowBackup="false"
-        android:icon="@mipmap/app_icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyNotes">
         <activity android:name=".intro.SplashScreen"
-            android:noHistory="true"
-            android:exported="false">
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
