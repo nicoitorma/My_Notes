@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/splash_bg"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:context=".LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_app"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/app_logo"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_app" />
+
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv1">
+
+            <View
+                android:id="@+id/cursor"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:id="@+id/layout_psd"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/forgot_pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            android:text="@string/forgot_pin"
+            android:visibility="gone"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="284dp"
+            android:padding="30dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/framelayout">
+
+            <TextView
+                android:id="@+id/number1"
+                style="@style/NumberInPasscode"
+                android:layout_alignParentStart="true"
+                android:text="@string/number_1" />
+
+            <TextView
+                android:id="@+id/number2"
+                style="@style/NumberInPasscode"
+                android:layout_centerHorizontal="true"
+                android:text="@string/number_2" />
+
+            <TextView
+                android:id="@+id/number3"
+                style="@style/NumberInPasscode"
+                android:layout_alignParentEnd="true"
+                android:text="@string/number_3" />
+
+            <TextView
+                android:id="@+id/number4"
+                style="@style/NumberInPasscode"
+                android:layout_below="@id/number1"
+                android:layout_alignParentStart="true"
+                android:text="@string/number_4" />
+
+            <TextView
+                android:id="@+id/number5"
+                style="@style/NumberInPasscode"
+                android:layout_below="@id/number1"
+                android:layout_centerHorizontal="true"
+                android:text="@string/number_5" />
+
+            <TextView
+                android:id="@+id/number6"
+                style="@style/NumberInPasscode"
+                android:layout_below="@id/number1"
+                android:layout_alignParentEnd="true"
+                android:text="@string/number_6" />
+
+            <TextView
+                android:id="@+id/number7"
+                style="@style/NumberInPasscode"
+                android:layout_below="@id/number4"
+                android:layout_alignParentStart="true"
+                android:text="@string/number_7" />
+
+            <TextView
+                android:id="@+id/number8"
+                style="@style/NumberInPasscode"
+                android:layout_below="@id/number4"
+                android:layout_centerHorizontal="true"
+                android:text="@string/number_8" />
+
+            <TextView
+                android:id="@+id/number9"
+                style="@style/NumberInPasscode"
+                android:layout_below="@id/number4"
+                android:layout_alignParentEnd="true"
+                android:text="@string/number_9" />
+
+            <ImageView
+                android:id="@+id/numberB"
+                style="@style/NumberInPasscode"
+                android:layout_below="@id/number7"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_backspace"
+                app:tint="#000"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/number0"
+                style="@style/NumberInPasscode"
+                android:layout_below="@id/number7"
+                android:layout_centerHorizontal="true"
+                android:text="@string/number_0" />
+
+            <ImageView
+                android:id="@+id/fingerprint"
+                style="@style/NumberInPasscode"
+                android:layout_below="@id/number7"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_fingerprint"
+                app:tint="#000"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,34 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    app:iconSpaceReserved="false">
+
+    <PreferenceCategory
+        app:title="@string/security_header"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            app:key="add_pin"
+            app:summary="Edit security PIN"
+            app:title="PIN"
+            app:iconSpaceReserved="false"/>
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:defaultValue="false"
+            app:key="pin_settings"
+            app:enabled="false"
+            app:summaryOff="@string/pin_summaryOff"
+            app:summaryOn="@string/pin_summaryOn"
+            app:title="@string/pin_title" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="fingerprint_settings"
+            app:iconSpaceReserved="false"
+            app:summary="@string/fingerprint_summary"
+            app:title="@string/fingerprint_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".PasswordManager.CreatePass">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/tv_reset_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="77dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="?attr/colorOnPrimary"
+            android:text="@string/create_pin"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColorHint="@color/true_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_reset_title"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/true_gray">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_reset_password1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transparent_border"
+                android:digits="1234567890"
+                android:hint="@string/new_pin"
+                android:inputType="number"
+                android:textColor="?attr/colorOnPrimary"
+                app:fontFamily="@font/poppins_medium" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColorHint="@color/true_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_layout1"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/true_gray">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_reset_password2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transparent_border"
+                android:hint="@string/re_enter_new_pin"
+                android:inputType="number"
+                android:textColor="?attr/colorOnPrimary"
+                app:fontFamily="@font/poppins_medium" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_reset_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/btn_color"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/save_pin"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_layout2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_white">#BFBFBF</color>
+    <color name="light_blue">#2DC3F1</color>
+    <color name="teal_200">#256AF4</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="splash_bg">@android:color/holo_blue_light</color>
+    <color name="transparent">#00000000</color>
+    <color name="true_gray">#838383</color>
+    <color name="btn_color">#4ACC5C</color>
+    <color name="dark">#202125</color>
+    <color name="tb_color">#3E3E3E</color>
+    <color name="tb_color_dark">#35363A</color>
+</resources>
