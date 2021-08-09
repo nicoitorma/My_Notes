@@ -3,7 +3,10 @@ package com.nicanoritorma.mynotes.Fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
@@ -71,13 +74,29 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         if (fingerprint != null)
         {
             fingerprint.setOnPreferenceChangeListener((preference, newValue) -> {
-                fingerprint.setChecked((Boolean) newValue);
-                editor = preferences.edit();
-                editor.putString("LOGIN_FINGERPRINT", newValue.toString());
-                editor.apply();
+                if (haveFingerprint())
+                {
+                    fingerprint.setChecked((Boolean) newValue);
+                    editor = preferences.edit();
+                    editor.putString("LOGIN_FINGERPRINT", newValue.toString());
+                    editor.apply();
+                }
+                else
+                {
+                    Toast.makeText(getContext(), "No fingerprint enrolled", Toast.LENGTH_SHORT).show();
+                }
                 return false;
             });
         }
+    }
 
+    private boolean haveFingerprint()
+    {
+        FingerprintManager fingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        if (fingerprintManager.hasEnrolledFingerprints())
+        {
+            return true;
+        }
+        return false;
     }
 }
